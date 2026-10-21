@@ -4,11 +4,11 @@ This document lists the content and data fields used by the current site. It exc
 
 ## Dataset summary
 
-- Dataset: DBCM Study Material Curriculum Dataset (14 Departments - Major & Minor) (version 3.0.0)
+- Dataset: DBCM Study Material Curriculum Dataset (15 Departments - Major & Minor) (version 3.0.0)
 - Dataset generated: 2026-10-20T17:33:24.470Z
 - Source used by Express: `data/curriculum.json`
 - Static fallback copy: `public/data/curriculum.json` (identical to the Express source)
-- Counts: 14 departments, 6 semesters, 155 subjects, 826 syllabus modules, 399 IMP records, 310 note records, 465 PYQ records, 310 video records.
+- Counts: 15 departments, 6 semesters, 166 subjects, 826 syllabus modules, 399 IMP records, 310 note records, 465 PYQ records, 310 video records.
 
 ## Institution content
 
@@ -39,17 +39,18 @@ This document lists the content and data fields used by the current site. It exc
 | polsci | Political Science | POL | 11 | 7 | 4 |
 | sociology | Sociology | SOC | 11 | 7 | 4 |
 | bsw | Social Work (BSW) | BSW | 11 | 7 | 4 |
+| psychology | Psychology | PYC | 11 | 7 | 4 |
 
 ## Semesters
 
 | Number | Year | Label | Subjects |
 |---:|---|---|---:|
-| 1 | FY | Sem 1 (FY) | 42 |
-| 2 | FY | Sem 2 (FY) | 29 |
-| 3 | SY | Sem 3 (SY) | 28 |
-| 4 | SY | Sem 4 (SY) | 28 |
-| 5 | TY | Sem 5 (TY) | 14 |
-| 6 | TY | Sem 6 (TY) | 14 |
+| 1 | FY | Sem 1 (FY) | 45 |
+| 2 | FY | Sem 2 (FY) | 31 |
+| 3 | SY | Sem 3 (SY) | 30 |
+| 4 | SY | Sem 4 (SY) | 30 |
+| 5 | TY | Sem 5 (TY) | 15 |
+| 6 | TY | Sem 6 (TY) | 15 |
 
 ## Subject data fields
 
@@ -6890,15 +6891,33 @@ Each syllabus module has a number, title, marks weightage, and summary. The sect
 - Management of Non-Profit Organizations (NGOs) Complete Video Lectures; channel: DBCM Social Work (BSW) Faculty; item count: 28; URL: https://www.youtube.com
 - Management of Non-Profit Organizations (NGOs) Comprehensive Review; channel: Academic Masterclass; item count: 18; URL: https://www.youtube.com
 
+### Psychology (PYC)
+
+Psychology follows the existing department course-numbering pattern: major subjects use `PYC` plus the course number, while minor subjects use the department code plus `M` and the course number. Syllabus modules and learning resources have not yet been added for these subjects.
+
+| Code | Subject | Semester | Track |
+|---|---|---:|---|
+| PYC101 | Foundations of Psychology | 1 | Major |
+| PYC102 | Biological Bases of Behaviour | 1 | Major |
+| PYC201 | Developmental Psychology | 2 | Major |
+| PYC301 | Social Psychology | 3 | Major |
+| PYC401 | Cognitive Psychology | 4 | Major |
+| PYC501 | Abnormal Psychology | 5 | Major |
+| PYC601 | Psychological Testing and Assessment | 6 | Major |
+| PYCM101 | General Psychology | 1 | Minor |
+| PYCM201 | Psychology of Wellbeing | 2 | Minor |
+| PYCM301 | Child Psychology | 3 | Minor |
+| PYCM401 | Introduction to Counselling Psychology | 4 | Minor |
+
 ## Other site content and behavior
 
 - The institution/about copy names Don Bosco College, Maram; affiliation to Manipur University; establishment year 2000; Salesians of Don Bosco; Senapati District, Manipur; the motto “Virtus et Scientia” / “Virtue and Knowledge”; NEP Major and Minor programs; and Maram Khunou campus location.
-- Static site copy advertises study materials, notes, IMP questions, past papers, video lectures, 14 departments, and a study tip to review one module and three high-yield questions daily.
+- Static site copy advertises study materials, notes, IMP questions, past papers, video lectures, 15 departments, and a study tip to review one module and three high-yield questions daily.
 - Student profile fields: display name, email account (Supabase integration), department, major/minor track, and semester.
 - Local user features: saved subject bookmarks, recently viewed subjects (up to five), and theme preference. Signed-in bookmarks are also synced to Supabase.
 - Site filters: department, major/minor/all track, semester, PYQ year/session, and text search.
 - Admin inputs: create a subject; add a note, IMP, or PYQ; edit the announcement. The admin APIs are server-side and use environment-configured credentials.
-- Announcement copy differs between the HTML fallback and the Express server default. HTML fallback: “DBCM Academic Portal: 14 Departments active. Select Department, choose Major or Minor, and explore verified study resources.” Server default: “🔥 DBCM Semester Exam Prep Portal Active — Select your Department, choose Major or Minor, and access Notes, IMP Questions & PYQs.”
+- Announcement copy differs between the HTML fallback and the Express server default. HTML fallback: “DBCM Academic Portal: 15 Departments active. Select Department, choose Major or Minor, and explore verified study resources.” Server default: “🔥 DBCM Semester Exam Prep Portal Active — Select your Department, choose Major or Minor, and access Notes, IMP Questions & PYQs.”
 
 ## Content gaps in the current source
 
