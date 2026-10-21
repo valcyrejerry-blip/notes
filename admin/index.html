@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin · DBCM Notes</title>
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="admin.css">
+  <script src="../data/curriculum.js" defer></script>
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-body">
+  <header class="topbar">
+    <a class="wordmark" href="../"><span class="wordmark-mark">D</span><span>DBCM <strong>Notes</strong></span></a>
+    <nav class="top-actions"><a class="text-link" href="../">Back to site</a></nav>
+  </header>
+  <main class="admin-shell">
+    <section id="login-panel" class="login-panel">
+      <p class="eyebrow">ADMIN AREA</p>
+      <h1>Sign in to<br><span>manage resources.</span></h1>
+      <p class="admin-subtitle">This separate admin screen is a frontend preview. It does not connect to a backend.</p>
+      <form id="login-form" class="admin-form">
+        <label for="admin-password">Password</label>
+        <input id="admin-password" type="password" placeholder="Enter admin password" autocomplete="current-password" required>
+        <p id="login-error" class="error-message hidden">That password did not match. Try again.</p>
+        <button class="primary-button" type="submit">Continue</button>
+      </form>
+      <p class="demo-hint">Prototype login password: <strong>1234</strong></p>
+    </section>
+
+    <section id="dashboard" class="dashboard hidden">
+      <div class="dashboard-heading">
+        <div><p class="eyebrow">DBCM NOTES · ADMIN</p><h1>Resource manager</h1><p class="admin-subtitle">Manage the materials students see for each subject.</p></div>
+        <button id="logout-button" class="quiet-button" type="button">Sign out</button>
+      </div>
+      <div class="admin-notice"><strong>Preview mode</strong><span>Changes are temporary and visible only in this browser. No files are uploaded or saved.</span></div>
+      <div class="admin-stats">
+        <article><span>Departments</span><strong>14</strong></article>
+        <article><span>Subjects</span><strong>155</strong></article>
+        <article><span>Note entries</span><strong id="note-count">310</strong></article>
+      </div>
+      <div class="manager-grid">
+        <section class="admin-card">
+          <div class="card-heading"><div><p class="eyebrow">ADD MATERIAL</p><h2>Share a note</h2></div></div>
+          <form id="note-form" class="admin-form two-col-form">
+            <div class="field-span"><label for="note-title">Note title</label><input id="note-title" required placeholder="e.g. Unit 1 revision notes"></div>
+            <div><label for="note-department">Department</label><select id="note-department" required></select></div>
+            <div><label for="note-subject">Subject</label><select id="note-subject" required></select></div>
+            <div><label for="note-unit">Unit</label><select id="note-unit"><option value="">All units</option></select></div>
+            <div><label for="note-author">Shared by</label><input id="note-author" placeholder="Admin or faculty name"></div>
+            <div class="field-span"><label for="note-file">PDF file</label><input id="note-file" type="file" accept="application/pdf"><small class="field-help">PDF upload will connect to Supabase Storage in a later step.</small></div>
+            <button class="primary-button field-span" type="submit">Preview note entry</button>
+          </form>
+        </section>
+        <section class="admin-card notes-card">
+          <div class="card-heading"><div><p class="eyebrow">CURRENT CATALOG</p><h2>Recent notes</h2></div><span class="quiet-count">Preview list</span></div>
+          <div id="admin-note-list" class="admin-note-list"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div id="admin-toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
